@@ -1,0 +1,69 @@
+Mapping: 
+1.	Students Table: 
+	•	Stu_id (primary key)
+	•	Stu_name 
+	•	Contact (multivalued)
+	•	Address (city, street) (composite attribute)
+	•	Faculty
+	•	Com_GPA
+	•	Dept_ID (Foreign Key referencing Departments Table)
+
+2.	Courses Table: 
+	•	Course_ID (Primary Key) 
+	•	Course_name 
+	•	Credit_Hours
+	•	Dept_ID (foreign key referencing Departments Table)
+
+3.	Departments Table:
+	•	Dept_ID (Primary Key)) 
+	•	Dept_name
+	•	Add_grade
+
+4.	Grades Table:
+	•	Grade (Primary Key)
+	•	Grade_points
+
+5.	Enrollments Table:
+	•	Stu_ID (primary key with course_id)
+	•	Course_ID (primary key with stu_id)
+	•	Grade
+	•	Semester
+
+
+Normalization: 
+1.	Students Table: 
+	1.	Stu_id (primary key)
+	2.	Stu_name 
+	3.	City  
+	4.	street
+	5.	Faculty
+	6.	Com_GPA
+	7.	Dept_ID (Foreign Key referencing Departments Table)
+
+2.	Courses Table: 
+	1.	Course_ID (Primary Key) 
+	2.	Course_name 
+	3.	Credit_Hours
+	4.	Dept_ID (foreign key referencing Departments Table)
+
+3.	Departments Table:
+	1.	Dept_ID (Primary Key)) 
+	2.	Dept_name
+	3.	Add_grade
+
+4.	Grades Table:
+	1.	Grade (Primary Key)
+	2.	Grade_points
+
+5.	Enrollments Table:
+	1.	Stu_ID (primary key with course_id)
+	2.	Course_ID (primary key with stu_id)
+	3.	Grade
+	4.	Semester
+
+
+
+
+6.	Student_Contact:
+	1.	Stu_ID ((primary key with contact & foreign key referencing stu_id in the students table).
+	2.	Contact (primary key with stu_id).

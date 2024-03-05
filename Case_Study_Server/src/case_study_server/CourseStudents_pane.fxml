@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane id="AnchorPane" prefHeight="280.0" prefWidth="600.0" style="-fx-background-color: #CCCCCC;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="case_study_server.CourseStudents_paneController">
+   <children>
+      <Pane layoutX="8.0" layoutY="9.0" prefHeight="263.0" prefWidth="585.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <HBox layoutX="1.0" layoutY="1.0" prefHeight="263.0" prefWidth="585.0">
+               <children>
+                  <TableView fx:id="c_Students" prefHeight="261.0" prefWidth="582.0" style="-fx-alignment: center; -fx-font-weight: bold; -fx-pref-height: 50px; -fx-font-size: 15;">
+                     <columns>
+                        <TableColumn fx:id="stu_id" prefWidth="138.0" style="-fx-alignment: center;" text="StudentID" />
+                        <TableColumn fx:id="stu_name" prefWidth="265.0" style="-fx-alignment: center;" text="Student Name" />
+                        <TableColumn fx:id="grade" prefWidth="178.0" style="-fx-alignment: center;" text="Grade" />
+                     </columns>
+                  </TableView>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

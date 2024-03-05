@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="headpane" prefHeight="467.0" prefWidth="899.0" style="-fx-background-color: #CCCCCC;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="case_study_server.Students_paneController">
+   <children>
+      <AnchorPane layoutX="14.0" layoutY="18.0" prefHeight="432.0" prefWidth="871.0" style="-fx-background-color: #ffffff; -fx-background-radius: 50,50,50; -fx-border-radius: 30,30,30;">
+         <children>
+            <BorderPane layoutY="-19.0" prefHeight="447.0" prefWidth="871.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <right>
+                  <VBox prefHeight="518.0" prefWidth="451.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Pane prefHeight="34.0" prefWidth="451.0" />
+                        <HBox prefHeight="85.0" prefWidth="451.0">
+                           <children>
+                              <Pane prefHeight="73.0" prefWidth="155.0" />
+                              <Button fx:id="add_stu" mnemonicParsing="false" onAction="#add_student" prefHeight="40.0" prefWidth="151.0" text="Add Student">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="88.0" prefWidth="451.0">
+                           <children>
+                              <Pane prefHeight="100.0" prefWidth="155.0" />
+                              <Button fx:id="update_stu" mnemonicParsing="false" onAction="#upadte_student" prefHeight="40.0" prefWidth="151.0" text="Update Student">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="87.0" prefWidth="451.0">
+                           <children>
+                              <Pane prefHeight="100.0" prefWidth="155.0" />
+                              <Button fx:id="delete_stu" mnemonicParsing="false" onAction="#Delete_student" prefHeight="40.0" prefWidth="151.0" text="Delete Student">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="84.0" prefWidth="451.0">
+                           <children>
+                              <Pane prefHeight="100.0" prefWidth="155.0" />
+                              <Button fx:id="add_grade" mnemonicParsing="false" onAction="#Add_grade" prefHeight="40.0" prefWidth="151.0" text="Add Student Grade">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="84.0" prefWidth="451.0">
+                           <children>
+                              <Pane prefHeight="100.0" prefWidth="155.0" />
+                              <Button fx:id="get_gpa" mnemonicParsing="false" onAction="#Retrive_student" prefHeight="40.0" prefWidth="151.0" text="Get Student GPA">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </right>
+               <center>
+                  <VBox prefHeight="518.0" prefWidth="491.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Pane prefHeight="15.0" prefWidth="420.0" />
+                        <HBox prefHeight="59.0" prefWidth="420.0">
+                           <children>
+                              <Pane prefHeight="82.0" prefWidth="61.0" />
+                              <Label prefHeight="30.0" prefWidth="153.0" text="Student ID :  ">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="stu_id" prefHeight="32.0" prefWidth="202.0" promptText="ID Number" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="60.0" prefWidth="420.0">
+                           <children>
+                              <Pane prefHeight="82.0" prefWidth="61.0" />
+                              <Label prefHeight="30.0" prefWidth="153.0" text="Student Name :  ">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="stu_name" prefHeight="32.0" prefWidth="202.0" promptText="Name" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="63.0" prefWidth="420.0">
+                           <children>
+                              <Pane prefHeight="83.0" prefWidth="61.0" />
+                              <Label prefHeight="30.0" prefWidth="153.0" text="City : ">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="city" prefHeight="32.0" prefWidth="202.0" promptText="City" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="59.0" prefWidth="420.0">
+                           <children>
+                              <Pane prefHeight="83.0" prefWidth="61.0" />
+                              <Label prefHeight="30.0" prefWidth="153.0" text="Street : ">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="street" prefHeight="32.0" prefWidth="202.0" promptText="Street" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="60.0" prefWidth="420.0">
+                           <children>
+                              <Pane prefHeight="83.0" prefWidth="61.0" />
+                              <Label prefHeight="30.0" prefWidth="153.0" text="Faculty">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="faculty" prefHeight="32.0" prefWidth="202.0" promptText="Faculty" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="61.0" prefWidth="420.0">
+                           <children>
+                              <Pane prefHeight="83.0" prefWidth="61.0" />
+                              <Label prefHeight="30.0" prefWidth="153.0" text="Department ID : ">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="dept_id" prefHeight="32.0" prefWidth="202.0" promptText="ID Number" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="44.0" prefWidth="420.0">
+                           <children>
+                              <Pane prefHeight="82.0" prefWidth="61.0" />
+                              <Label prefHeight="30.0" prefWidth="153.0" text="TEL / Mobile : ">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="phone_num" prefHeight="32.0" prefWidth="202.0" promptText="phone number" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

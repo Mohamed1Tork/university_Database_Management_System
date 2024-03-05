@@ -1,0 +1,53 @@
+** Data Base Creation **
+-- Create Students table
+CREATE TABLE Students (
+    Stu_ID NUMBER PRIMARY KEY,
+    Stu_name VARCHAR2(100) NOT NULL,
+    City VARCHAR2(50),
+    Street VARCHAR2(50),
+    Faculty VARCHAR2(50),
+    Dept_ID NUMBER REFERENCES Departments(Dept_ID)
+);
+
+-- Create Departments table
+CREATE TABLE Departments (
+    Dept_ID NUMBER PRIMARY KEY,
+    Dept_Name VARCHAR2(50) UNIQUE NOT NULL,
+    Add_Grade VARCHAR2(10)
+);
+
+-- Create Courses table
+CREATE TABLE Courses (
+    Course_ID NUMBER PRIMARY KEY,
+    Course_Name VARCHAR2(100) UNIQUE NOT NULL,
+    Credit_Hours NUMBER NOT NULL
+);
+
+-- Create Enrollments table
+CREATE TABLE Enrollments (
+    Stu_ID NUMBER REFERENCES Students(Stu_ID),
+    Course_ID NUMBER REFERENCES Courses(Course_ID),
+    Semester VARCHAR2(20),
+    Grade VARCHAR2(3),
+    PRIMARY KEY (Stu_ID, Course_ID)
+);
+
+-- Create Grades table
+CREATE TABLE Grades (
+    Grade VARCHAR2(2) PRIMARY KEY,
+    Grade_Points NUMBER
+);
+
+-- Create Student_Contact table
+CREATE TABLE Student_Contact (
+    Stu_ID NUMBER,
+    Contact VARCHAR2(20),
+    PRIMARY KEY (Stu_ID, Contact),
+    FOREIGN KEY (Stu_ID) REFERENCES Students(Stu_ID)
+);
+
+
+
+
+
+ 

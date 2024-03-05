@@ -1,0 +1,108 @@
+-- create package specification 
+CREATE OR REPLACE PACKAGE MO.gpa_update_pkg IS
+  TYPE student_id_list IS TABLE OF Students.stu_ID%TYPE INDEX BY PLS_INTEGER;
+  students_to_update student_id_list;
+  PROCEDURE add_student_to_update(stu_id IN Students.stu_id%TYPE);
+  PROCEDURE process_updated_students;
+  FUNCTION calc_com_GPA(v_stu_id NUMBER) RETURN NUMBER;
+END;
+------------------------------------------------------
+-- create package body 
+CREATE OR REPLACE PACKAGE BODY MO.gpa_update_pkg IS
+  FUNCTION calc_com_GPA(v_stu_id NUMBER) RETURN NUMBER IS
+    CURSOR stu_cursor IS
+      SELECT g.grade_points, e.course_id
+      FROM grades g, enrollments e
+      WHERE g.grade = e.grade
+      AND stu_id = v_stu_id;
+    v_total_hours NUMBER := 0.0;
+    v_points NUMBER;
+    v_hours NUMBER;
+    v_cour_weight NUMBER;
+    v_total_weight NUMBER := 0.0;
+    v_record stu_cursor%ROWTYPE; -- Add this line
+  BEGIN
+    FOR v_record IN stu_cursor LOOP
+      SELECT credit_hours
+      INTO v_hours
+      FROM courses
+      WHERE course_id = v_record.course_id;
+      v_points := v_record.grade_points;
+      v_cour_weight := v_points * v_hours;
+      v_total_hours := v_total_hours + v_hours;
+      v_total_weight := v_total_weight + v_cour_weight;
+    END LOOP;
+    RETURN ROUND(v_total_weight / v_total_hours, 2);
+  END calc_com_GPA;
+
+  PROCEDURE add_student_to_update(stu_id IN Students.stu_id%TYPE) IS
+  BEGIN
+    students_to_update(stu_id) := stu_id;
+  END add_student_to_update;
+
+  PROCEDURE process_updated_students IS
+  BEGIN
+    FORALL i IN students_to_update.FIRST..students_to_update.LAST
+      UPDATE Students
+      SET com_GPA = calc_com_GPA(students_to_update(i))
+      WHERE stu_id = students_to_update(i);
+
+    students_to_update.DELETE;
+  END process_updated_students;
+
+END ;
+/
+
+---------------------------------------------------------------------------
+-- create function to calaculate the course average gpa
+CREATE OR REPLACE FUNCTION MO.calc_avg_GPA(v_cour_id NUMBER)
+RETURN NUMBER
+IS
+    CURSOR cour_cursor IS
+        SELECT grade FROM enrollments
+        WHERE course_id = v_cour_id;
+    
+    v_avg_gpa NUMBER := 0.0;
+    v_points NUMBER;
+    v_total_points NUMBER := 0;
+    v_total_students NUMBER := 0;
+BEGIN
+    
+    FOR rec IN cour_cursor LOOP
+        -- Assuming grade_points is the corresponding column in the grades table
+        SELECT grade_points
+        INTO v_points
+        FROM grades
+        WHERE grade = rec.grade;
+        v_total_points := v_total_points + v_points;
+        v_total_students := v_total_students + 1;
+    END LOOP;
+
+    -- Avoid division by zero
+    IF v_total_students > 0 THEN
+        v_avg_gpa := v_total_points  / v_total_students;
+    END IF;
+
+    RETURN v_avg_gpa;
+END;
+/
+
+-------------------------------------------------------
+
+CREATE OR REPLACE TRIGGER MO.update_GPA
+FOR INSERT OR UPDATE ON MO.ENROLLMENTS 
+COMPOUND TRIGGER
+
+AFTER STATEMENT IS
+BEGIN
+  gpa_update_pkg.process_updated_students;
+END AFTER STATEMENT;
+
+BEFORE EACH ROW IS
+BEGIN
+  IF INSERTING OR UPDATING THEN
+    gpa_update_pkg.add_student_to_update(:NEW.stu_id);
+  END IF;
+END BEFORE EACH ROW;
+
+END ;

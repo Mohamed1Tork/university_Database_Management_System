@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="403.0" prefWidth="899.0" style="-fx-background-color: #CCCCCC;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="case_study_server.Departments_paneController">
+   <children>
+      <AnchorPane layoutX="13.0" layoutY="14.0" prefHeight="383.0" prefWidth="874.0" style="-fx-background-color: #ffffff; -fx-background-radius: 50,50,50; -fx-border-radius: 30,30,30;" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="14.0">
+         <children>
+            <BorderPane layoutY="-19.0" prefHeight="447.0" prefWidth="871.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <right>
+                  <VBox prefHeight="518.0" prefWidth="451.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Pane prefHeight="28.0" prefWidth="451.0" />
+                        <HBox prefHeight="76.0" prefWidth="451.0">
+                           <children>
+                              <Pane prefHeight="100.0" prefWidth="127.0" />
+                              <Button fx:id="add_dept" mnemonicParsing="false" onAction="#add_dept" prefHeight="40.0" prefWidth="158.0" text="Add Department">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="77.0" prefWidth="451.0">
+                           <children>
+                              <Pane prefHeight="100.0" prefWidth="127.0" />
+                              <Button fx:id="update_dept" mnemonicParsing="false" onAction="#update_dept" prefHeight="40.0" prefWidth="158.0" text="Update Department">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="74.0" prefWidth="451.0">
+                           <children>
+                              <Pane prefHeight="100.0" prefWidth="127.0" />
+                              <Button fx:id="delete_dept" mnemonicParsing="false" onAction="#delete_dept" prefHeight="40.0" prefWidth="158.0" text="Delete Department">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="72.0" prefWidth="451.0">
+                           <children>
+                              <Pane prefHeight="100.0" prefWidth="127.0" />
+                              <Button fx:id="get_departments" mnemonicParsing="false" onAction="#get_departments" prefHeight="40.0" prefWidth="158.0" text="Exist Departments">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="258.0" prefHeight="72.0" prefWidth="451.0">
+                           <children>
+                              <Pane prefHeight="100.0" prefWidth="127.0" />
+                              <Button fx:id="get_courses" mnemonicParsing="false" onAction="#get_courses" prefHeight="40.0" prefWidth="162.0" text=" Department Courses">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </right>
+               <center>
+                  <VBox prefHeight="518.0" prefWidth="491.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Pane prefHeight="43.0" prefWidth="423.0" />
+                        <HBox prefHeight="138.0" prefWidth="423.0">
+                           <children>
+                              <Pane prefHeight="82.0" prefWidth="61.0" />
+                              <Label prefHeight="30.0" prefWidth="199.0" text="Department ID :  ">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="dept_id" prefHeight="32.0" prefWidth="202.0" promptText="ID Number" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="124.0" prefWidth="423.0">
+                           <children>
+                              <Pane prefHeight="82.0" prefWidth="61.0" />
+                              <Label prefHeight="30.0" prefWidth="199.0" text="Department Name :  ">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="dept_name" prefHeight="32.0" prefWidth="202.0" promptText="Name" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="70.0" prefWidth="491.0">
+                           <children>
+                              <Pane prefHeight="83.0" prefWidth="61.0" />
+                              <Label prefHeight="30.0" prefWidth="199.0" text="Admission Grade : ">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="add_grade" prefHeight="32.0" prefWidth="202.0" promptText="Grade" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

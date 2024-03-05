@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="280.0" prefWidth="600.0" style="-fx-background-color: #CCCCCC;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="case_study_server.Add_Grade_paneController">
+   <children>
+      <Pane layoutX="8.0" layoutY="9.0" prefHeight="263.0" prefWidth="585.0" style="-fx-background-color: #ffffff; -fx-background-radius: 50,50,50; -fx-border-radius: 30,30,30;">
+         <children>
+            <ImageView fitHeight="119.0" fitWidth="150.0" layoutX="367.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/icons8-grade-66.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="Course_name" layoutX="51.0" layoutY="126.0" prefHeight="31.0" prefWidth="181.0" />
+            <Text fx:id="textcardrecharge1" layoutX="51.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Course Name">
+               <font>
+                  <Font name="System Bold Italic" size="16.0" />
+               </font>
+            </Text>
+            <TextField fx:id="stu_grade" layoutX="51.0" layoutY="188.0" prefHeight="31.0" prefWidth="79.0" />
+            <Text fx:id="textcardrecharge2" layoutX="51.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grade">
+               <font>
+                  <Font name="System Bold Italic" size="16.0" />
+               </font>
+            </Text>
+            <Text fx:id="textcardrecharge" layoutX="55.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student ID">
+               <font>
+                  <Font name="System Bold Italic" size="16.0" />
+               </font>
+            </Text>
+            <TextField fx:id="stu_id" layoutX="51.0" layoutY="57.0" prefHeight="31.0" prefWidth="181.0" />
+            <Button fx:id="buttconfirm" layoutX="359.0" layoutY="177.0" mnemonicParsing="false" onAction="#add_grade" prefHeight="34.0" prefWidth="136.0" style="-fx-background-radius: 100; -fx-background-color: grey;" styleClass="clear-btn" text="Confirm">
+               <font>
+                  <Font name="Verdana Bold Italic" size="16.0" />
+               </font>
+            </Button>
+            <Text fx:id="textcardrecharge21" layoutX="170.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Semester">
+               <font>
+                  <Font name="System Bold Italic" size="16.0" />
+               </font>
+            </Text>
+            <TextField fx:id="semester" layoutX="170.0" layoutY="188.0" prefHeight="31.0" prefWidth="79.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

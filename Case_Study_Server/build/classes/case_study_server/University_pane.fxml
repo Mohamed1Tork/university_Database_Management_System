@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #9C1E53;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="case_study_server.University_paneController">
+   <center>
+      <AnchorPane fx:id="headpane" prefHeight="409.0" prefWidth="899.0" style="-fx-background-color: #CCCCCC;" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane fx:id="pagepane" layoutX="15.0" layoutY="21.0" prefHeight="428.0" prefWidth="871.0" style="-fx-background-color: #ffffff; -fx-background-radius: 50,50,50; -fx-border-radius: 30,30,30;">
+               <children>
+                  <ImageView fx:id="welcome" fitHeight="447.0" fitWidth="877.0" layoutX="-6.0" layoutY="-5.0" opacity="0.71" pickOnBounds="true">
+                     <image>
+                        <Image url="@../Images/Roll%20Out%20the%20Welcome%20Mat%20at%20Your%20School.jpg" />
+                     </image>
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </ImageView>
+               </children>
+               <effect>
+                  <Glow />
+               </effect></AnchorPane>
+         </children></AnchorPane>
+   </center>
+   <top>
+      <AnchorPane fx:id="anchorpanevboxmainpane" prefHeight="200.0" prefWidth="900.0" style="-fx-background-color: #CCCCCC;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="230.0" prefWidth="900.0">
+               <children>
+                  <Pane prefHeight="230.0" prefWidth="11.0" />
+                  <VBox prefHeight="230.0" prefWidth="128.0">
+                     <children>
+                        <Pane prefHeight="19.0" prefWidth="128.0" />
+                        <ImageView fx:id="makeawishimgmain" fitHeight="138.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/icons8-university-64%20(1).png" />
+                           </image>
+                        </ImageView>
+                        <Pane prefHeight="33.0" prefWidth="128.0" />
+                        <Button fx:id="logpoutbtn" mnemonicParsing="false" onAction="#logout" prefHeight="39.0" prefWidth="119.0" style="-fx-background-radius: 20,20,20,20; -fx-background-color: #333333;" text="Logout">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <textFill>
+                              <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                 <stops>
+                                    <Stop color="WHITE" />
+                                    <Stop color="WHITE" offset="1.0" />
+                                 </stops>
+                              </RadialGradient>
+                           </textFill>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="230.0" prefWidth="743.0">
+                     <children>
+                        <Pane prefHeight="17.0" prefWidth="710.0" />
+                        <HBox prefHeight="227.0" prefWidth="741.0" style="-fx-background-color: #ffffff; -fx-background-radius: 50,50,50,50; -fx-border-radius: 30,30,30,30;">
+                           <children>
+                              <Pane prefHeight="220.0" prefWidth="17.0" />
+                              <VBox prefHeight="227.0" prefWidth="179.0">
+                                 <children>
+                                    <Pane prefHeight="92.0" prefWidth="164.0" />
+                                    <HBox prefHeight="44.0" prefWidth="148.0">
+                                       <children>
+                                          <ImageView fx:id="imageStudentspane" fitHeight="37.0" fitWidth="50.0" onMouseClicked="#loadPageProfile" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Images/icons8-students-64.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                          <Button fx:id="bttnStudents" alignment="BOTTOM_LEFT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#studentsPage" prefHeight="35.0" prefWidth="105.0" style="-fx-background-color: #333333;" text="Students" textFill="#fffefe">
+                                             <font>
+                                                <Font name="Century" size="18.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="220.0" prefWidth="207.0">
+                                 <children>
+                                    <Pane prefHeight="90.0" prefWidth="100.0" />
+                                    <HBox prefHeight="44.0" prefWidth="148.0">
+                                       <children>
+                                          <ImageView fx:id="imageDepartmentspane" fitHeight="34.0" fitWidth="37.0" onMouseClicked="#loadFriends" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Images/icons8-department-64.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                          <Button fx:id="bttnDepartments" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#departmentsPage" onMouseClicked="#loadFriends" prefHeight="33.0" prefWidth="134.0" style="-fx-background-color: #333333;" text="Departments" textFill="#fff9f9">
+                                             <font>
+                                                <Font name="Century" size="17.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="220.0" prefWidth="185.0">
+                                 <children>
+                                    <Pane prefHeight="86.0" prefWidth="171.0" />
+                                    <HBox prefHeight="44.0" prefWidth="148.0">
+                                       <children>
+                                          <ImageView fx:id="imageCoursespane" fitHeight="44.0" fitWidth="40.0" onMouseClicked="#loadItemsPage" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Images/icons8-course-64.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                          <Button fx:id="buttCourses" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#coursesPage" prefHeight="38.0" prefWidth="104.0" style="-fx-background-color: #333333;" text="Courses" textFill="#fcf7f7">
+                                             <font>
+                                                <Font name="Century" size="19.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="227.0" prefWidth="136.0">
+                                 <children>
+                                    <Pane prefHeight="84.0" prefWidth="100.0" />
+                                    <HBox prefHeight="44.0" prefWidth="148.0">
+                                       <children>
+                                          <ImageView fx:id="imagReportspane" fitHeight="37.0" fitWidth="50.0" onMouseClicked="#loadConnectPage" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Images/icons8-report-64.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Button fx:id="buttReports" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#reportsPage" prefHeight="33.0" prefWidth="87.0" style="-fx-background-color: #333333;" text="Reports" textFill="#fffefe">
+                                             <font>
+                                                <Font name="Century" size="17.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>
